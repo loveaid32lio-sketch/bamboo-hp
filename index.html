@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かすみがうら竹林ベース | Forest Works</title>
+    <meta name="description" content="茨城県かすみがうら市の竹林で、たけのこ掘り・季節の体験・竹林レンタルを提供しています。">
+    <meta name="theme-color" content="#4a6741">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green-deep: #4a6741;
+            --green-light: #e8ede7;
+            --green-mid: #6a8b60;
+            --beige: #f9f8f6;
+            --dark: #2c362a;
+            --accent: #c8a96e;
+            --accent-glow: rgba(200, 169, 110, 0.35);
+            --text-main: #3a4438;
+            --text-sub: #7a8c76;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Shippori Mincho', serif;
+            background-color: var(--beige);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            background-color: var(--dark);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .site-logo a {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 13px;
+            color: var(--green-light);
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .site-nav a {
+            font-size: 11px;
+            color: rgba(232,237,231,0.6);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            transition: color 0.2s;
+        }
+
+        .site-nav a:hover { color: var(--green-light); }
+
+        .header-insta {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            color: rgba(232,237,231,0.6);
+            transition: color 0.2s;
+        }
+
+        .header-insta:hover { color: var(--green-light); }
+
+        .header-insta svg { display: block; }
+
+        /* ========== INSTAGRAM BANNER ========== */
+        .insta-banner {
+            background-color: var(--dark);
+            border-top: 1px solid rgba(232,237,231,0.08);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .insta-banner-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .insta-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 2px solid rgba(200,169,110,0.6);
+            box-shadow: 0 0 14px rgba(200,169,110,0.35);
+        }
+
+        .insta-banner-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: rgba(232,237,231,0.4);
+            text-transform: uppercase;
+        }
+
+        .insta-banner-text {
+            font-size: 16px;
+            color: var(--green-light);
+            line-height: 1.6;
+        }
+
+        .btn-insta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 1px solid rgba(200,169,110,0.5);
+            color: var(--accent);
+            box-shadow: 0 0 10px rgba(200,169,110,0.2);
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Shippori Mincho', serif;
+            transition: all 0.2s ease;
+            margin-top: 4px;
+        }
+
+        .btn-insta:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            height: 100svh;
+            background-color: var(--dark);
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(44,54,42,0.5) 0%, rgba(44,54,42,0.3) 50%, rgba(44,54,42,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 24px;
+        }
+
+        .hero-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: rgba(232,237,231,0.7);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 8vw, 80px);
+            color: white;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title-ja {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(16px, 3vw, 22px);
+            color: rgba(232,237,231,0.85);
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            margin-bottom: 40px;
+        }
+
+        .hero-scroll {
+            font-size: 10px;
+            color: rgba(232,237,231,0.5);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* ========== SECTIONS COMMON ========== */
+        .section {
+            padding: 80px 24px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.5;
+            margin-bottom: 24px;
+            letter-spacing: 0.04em;
+        }
+
+        .section-divider {
+            width: 32px;
+            height: 1px;
+            background-color: var(--accent);
+            margin-bottom: 28px;
+        }
+
+        .section-body {
+            font-size: 15px;
+            line-height: 2.1;
+            color: var(--text-main);
+            letter-spacing: 0.03em;
+        }
+
+        /* ========== ABOUT ========== */
+        .about-section {
+            background-color: var(--green-light);
+        }
+
+        .about-section .section {
+            padding: 80px 24px;
+        }
+
+        /* ========== EXPERIENCE MENU ========== */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(74,103,65,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(44,54,42,0.1);
+        }
+
+        .menu-card-img {
+            height: 200px;
+            background-color: var(--green-light);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-card-body {
+            padding: 24px;
+        }
+
+        .menu-card-tag {
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .menu-card-desc {
+            font-size: 13px;
+            line-height: 1.9;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+        }
+
+        .btn-card {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--green-deep);
+            color: var(--green-deep);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        .btn-card:hover {
+            background-color: var(--green-deep);
+            color: white;
+        }
+
+        /* ========== SCHEDULE ========== */
+        .schedule-section {
+            background-color: var(--dark);
+        }
+
+        .schedule-section .section {
+            padding: 80px 24px;
+        }
+
+        .schedule-section .section-title,
+        .schedule-section .section-body {
+            color: var(--green-light);
+        }
+
+        .schedule-section .section-eyebrow {
+            color: rgba(194,143,121,0.8);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .schedule-item {
+            background: rgba(232,237,231,0.06);
+            border: 1px solid rgba(232,237,231,0.12);
+            border-radius: 10px;
+            padding: 20px 16px 18px;
+        }
+
+        .schedule-item.off-season {
+            opacity: 0.4;
+        }
+
+        .schedule-season {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .schedule-month {
+            font-size: 12px;
+            color: rgba(232,237,231,0.5);
+            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        .schedule-event {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .schedule-desc {
+            font-size: 12px;
+            color: rgba(232,237,231,0.5);
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .btn-schedule {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid rgba(200,169,110,0.6);
+            color: var(--accent);
+            box-shadow: 0 0 8px rgba(200,169,110,0.2);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Shippori Mincho', serif;
+            transition: all 0.2s ease;
+        }
+
+        .btn-schedule:hover {
+            background: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 0 16px rgba(200,169,110,0.5);
+        }
+
+        .btn-schedule.disabled {
+            border-color: rgba(232,237,231,0.15);
+            color: rgba(232,237,231,0.25);
+            pointer-events: none;
+            box-shadow: none;
+        }
+
+        /* ========== NOTE ========== */
+        .note-section {
+            background-color: var(--beige);
+        }
+
+        .btn-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background-color: var(--dark);
+            color: var(--green-light);
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Shippori Mincho', serif;
+            margin-top: 28px;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-note:hover { background-color: var(--green-deep); }
+
+        /* ========== ACCESS ========== */
+        .access-section {
+            background-color: var(--green-light);
+        }
+
+        .map-wrap {
+            margin-top: 32px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(44,54,42,0.1);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 360px;
+            border: none;
+            display: block;
+        }
+
+        .access-info {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 2;
+            color: var(--text-sub);
+        }
+
+        /* ========== LINE CTA ========== */
+        .line-section {
+            padding: 80px 24px;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .btn-line {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #00b900;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 28px;
+            transition: background-color 0.25s ease;
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        .btn-line:hover { background-color: #009c00; }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background-color: var(--dark);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 13px;
+            color: rgba(232,237,231,0.5);
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            color: rgba(232,237,231,0.35);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: rgba(232,237,231,0.7); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            .site-nav { display: none; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-logo">
+            <a href="/">Forest Works</a>
+        </div>
+        <nav class="site-nav">
+            <a href="#experience">体験メニュー</a>
+            <a href="#schedule">年間スケジュール</a>
+            <a href="#note">ストーリー</a>
+            <a href="#access">アクセス</a>
+        </nav>
+        <a href="https://www.instagram.com/takesumikochan/" class="header-insta" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Kasumigaura Bamboo Base</p>
+            <h1 class="hero-title">かすみがうら<br>竹林ベース</h1>
+            <p class="hero-title-ja">竹林で、自然とつながる時間を。</p>
+            <p class="hero-scroll">scroll ↓</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+        <div class="section">
+            <p class="section-eyebrow">About</p>
+            <h2 class="section-title">竹林との、静かな関わり。</h2>
+            <div class="section-divider"></div>
+            <p class="section-body">
+                茨城県かすみがうら市の里山に広がる竹林を拠点に、季節ごとの体験を提供しています。<br><br>
+                たけのこ掘り、竹炭づくり、瞑想ウォーク——自然の中で過ごすことで、日常では気づかない自分の感覚が戻ってきます。<br><br>
+                竹林は、ただの場所ではなく、あなた自身と向き合うための空間です。
+            </p>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE MENU -->
+    <section id="experience">
+        <div class="section">
+            <p class="section-eyebrow">Experience</p>
+            <h2 class="section-title">体験メニュー</h2>
+            <div class="section-divider"></div>
+
+            <div class="menu-grid">
+
+                <!-- たけのこ掘り -->
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('たけのこ掘り.jpg'); background-size: cover; background-position: center 40%;"></div>
+                    <div class="menu-card-body">
+                        <p class="menu-card-tag">Spring · 春</p>
+                        <h3 class="menu-card-title">たけのこ掘り</h3>
+                        <p class="menu-card-desc">春限定の体験。土の中から自分でたけのこを掘り起こす、シンプルで豊かな時間です。</p>
+                        <a href="https://takenokoworks.studio.site/" class="btn-card" target="_blank" rel="noopener">詳細・予約</a>
+                    </div>
+                </div>
+
+                <!-- 年間イベント -->
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('EF3C135A-0A15-4F7E-9BC7-ED7271C77133.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="menu-card-body">
+                        <p class="menu-card-tag">Year Round · 通年</p>
+                        <h3 class="menu-card-title">季節の竹林体験</h3>
+                        <p class="menu-card-desc">竹炭づくり・瞑想ウォーク・焚き火など、季節ごとにさまざまな体験を開催しています。</p>
+                        <a href="#schedule" class="btn-card">スケジュールを見る</a>
+                    </div>
+                </div>
+
+                <!-- 竹林レンタル -->
+                <div class="menu-card">
+                    <div class="menu-card-img" style="background-image: url('access.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="menu-card-body">
+                        <p class="menu-card-tag">Rental · レンタル</p>
+                        <h3 class="menu-card-title">竹林レンタル</h3>
+                        <p class="menu-card-desc">竹林空間を丸ごとレンタル。撮影・イベント・ワークショップなど、さまざまな用途でご利用いただけます。常時内覧会受付中です。</p>
+                        <a href="#" class="btn-card">内覧会を申し込む（準備中）</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="schedule-section">
+        <div class="section">
+            <p class="section-eyebrow">Schedule</p>
+            <h2 class="section-title">年間スケジュール</h2>
+            <div class="section-divider" style="background-color: var(--accent);"></div>
+            <p class="section-body">竹林は、季節ごとに表情を変えます。それぞれの時期に合った体験をご用意しています。</p>
+
+            <div class="schedule-grid">
+
+                <div class="schedule-item">
+                    <p class="schedule-season">Spring</p>
+                    <p class="schedule-month">3月 — 5月</p>
+                    <p class="schedule-event">たけのこ掘り</p>
+                    <p class="schedule-desc">土の中から自分でたけのこを掘り起こす、春だけの特別な体験。</p>
+                    <a href="https://takenokoworks.studio.site/" class="btn-schedule" target="_blank" rel="noopener">詳細・予約 →</a>
+                </div>
+
+                <div class="schedule-item" style="border-color: rgba(200,169,110,0.5); box-shadow: 0 0 16px rgba(200,169,110,0.2);">
+                    <p class="schedule-season" style="color: var(--accent);">Summer · 直近開催</p>
+                    <p class="schedule-month">6月</p>
+                    <p class="schedule-event">竹節水観察会</p>
+                    <p class="schedule-desc">竹の節に溜まった水を観察する、梅雨ならではの静かな体験。<br><span style="color: #c8a96e; font-size: 13px;">5/31 · 6/19 ｜ 参加費 ¥3,000</span></p>
+                    <a href="https://lin.ee/vKltn4J3" class="btn-schedule" target="_blank" rel="noopener">LINEで予約する →</a>
+                </div>
+
+                <div class="schedule-item">
+                    <p class="schedule-season">Autumn · Winter</p>
+                    <p class="schedule-month">11月 — 12月</p>
+                    <p class="schedule-event">竹林 DAYCAMP</p>
+                    <p class="schedule-desc">焚き火を囲み、竹炭づくりや瞑想ウォークを楽しむ一日。</p>
+                    <a href="https://lin.ee/vKltn4J3" class="btn-schedule" target="_blank" rel="noopener">LINEで詳細を見る →</a>
+                </div>
+
+                <div class="schedule-item">
+                    <p class="schedule-season">Winter</p>
+                    <p class="schedule-month">1月 — 2月</p>
+                    <p class="schedule-event">和しんぼく会</p>
+                    <p class="schedule-desc">新年の竹林で、静かに自分と向き合う交流会。</p>
+                    <a href="https://lin.ee/vKltn4J3" class="btn-schedule" target="_blank" rel="noopener">LINEで詳細を見る →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM BANNER -->
+    <div class="insta-banner">
+        <div class="insta-banner-inner">
+            <img src="profile.jpg" alt="たけすみこ" class="insta-avatar">
+            <p class="insta-banner-label">Instagram</p>
+            <p class="insta-banner-text">最新イベント情報は<br>Instagramでチェック</p>
+            <a href="https://www.instagram.com/takesumikochan/" class="btn-insta" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                </svg>
+                @takesumikochan をフォローする
+            </a>
+        </div>
+    </div>
+
+    <!-- NOTE -->
+    <section id="note" class="note-section">
+        <div class="section">
+            <p class="section-eyebrow">Story</p>
+            <h2 class="section-title">竹林からの、言葉。</h2>
+            <div class="section-divider"></div>
+            <p class="section-body">竹林での気づき、季節の記録、体験者の声。NOTEで竹林にまつわるストーリーを綴っています。</p>
+            <a href="https://note.com/takesumiko" class="btn-note" target="_blank" rel="noopener">
+                NOTEで読む →
+            </a>
+        </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section id="access" class="access-section">
+        <div class="section">
+            <p class="section-eyebrow">Access</p>
+            <h2 class="section-title">アクセス</h2>
+            <div class="section-divider"></div>
+
+            <div class="map-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1618.75!2d140.3259907!3d36.0882541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60226b007dff27c5%3A0xb97c0ee3bb708d8b!2z44GL44GZ44G_44GM44GG44KJ56aP5p6X44OZ44O844K6!5e0!3m2!1sja!2sjp!4v1234567890"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p class="access-info">
+                📍 茨城県かすみがうら市<br>
+                🚃 電車でお越しの方：詳細はお問い合わせください
+            </p>
+        </div>
+    </section>
+
+    <!-- LINE CTA -->
+    <section>
+        <div class="line-section">
+            <p class="section-eyebrow" style="text-align:center;">Contact</p>
+            <h2 class="section-title" style="text-align:center;">体験のご予約・お問い合わせ</h2>
+            <div class="section-divider" style="margin: 0 auto 28px;"></div>
+            <p class="section-body" style="text-align:center;">ご予約・ご質問はLINE公式アカウントからお気軽にどうぞ。</p>
+            <div style="text-align:center;">
+                <a href="https://lin.ee/vKltn4J3" class="btn-line" target="_blank" rel="noopener">
+                    LINEで問い合わせる
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p class="footer-logo">Forest Works / かすみがうら竹林ベース</p>
+        <div class="footer-links">
+            <a href="/">Forest Works HP</a>
+            <a href="https://www.instagram.com/meisoukasumi/" target="_blank">Instagram</a>
+            <a href="https://note.com/takesumiko" target="_blank">Note</a>
+            <a href="https://lin.ee/vKltn4J3" target="_blank">LINE</a>
+        </div>
+    </footer>
+
+</body>
+</html>
