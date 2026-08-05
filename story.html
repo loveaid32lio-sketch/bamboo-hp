@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竹林のはなし | かすみがうら竹林ベース</title>
+    <meta name="description" content="茨城県かすみがうら市の竹林で、たけのこ掘り・竹炭づくり・瞑想ウォークを続けています。かすみがうら竹林ベースのストーリー。">
+    <meta name="theme-color" content="#4a6741">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-deep: #4a6741;
+            --green-light: #e8ede7;
+            --beige: #f9f8f6;
+            --dark: #2c362a;
+            --accent: #c8a96e;
+            --text-main: #3a4438;
+            --text-sub: #7a8c76;
+            --serif-ja: 'Shippori Mincho', serif;
+            --serif-en: 'Cormorant Garamond', serif;
+            --sans-ja: 'Hiragino Sans', 'Yu Gothic', system-ui, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--serif-ja);
+            background-color: var(--beige);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* ---------- header ---------- */
+        .site-header {
+            background-color: var(--dark);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .site-logo a {
+            font-size: 13px;
+            color: var(--green-light);
+            letter-spacing: 0.2em;
+            text-decoration: none;
+        }
+
+        .site-nav { display: flex; gap: 24px; }
+
+        .site-nav a {
+            font-size: 11px;
+            color: rgba(232,237,231,0.6);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            transition: color 0.2s;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus-visible { color: var(--green-light); }
+
+        /* ---------- hero ---------- */
+        .story-hero {
+            min-height: 78svh;
+            background-color: var(--dark);
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center 60%;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .story-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(44,54,42,0.45) 0%, rgba(44,54,42,0.25) 45%, rgba(44,54,42,0.85) 100%);
+        }
+
+        .story-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 72px;
+            width: 100%;
+        }
+
+        .story-hero-eyebrow {
+            font-family: var(--serif-en);
+            font-size: 12px;
+            letter-spacing: 0.32em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .story-hero-title {
+            font-size: clamp(34px, 7vw, 58px);
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.35;
+            letter-spacing: 0.08em;
+            text-wrap: balance;
+            word-break: auto-phrase;
+            margin-bottom: 20px;
+        }
+
+        .story-hero-lead {
+            font-size: clamp(14px, 2.4vw, 16px);
+            line-height: 2;
+            color: rgba(232,237,231,0.82);
+            max-width: 30em;
+        }
+
+        /* ---------- chapters ---------- */
+        .chapter {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 76px 24px;
+        }
+
+        .chapter-eyebrow {
+            font-family: var(--serif-en);
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .chapter-title {
+            font-size: clamp(22px, 4vw, 31px);
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+            text-wrap: balance;
+            word-break: auto-phrase;
+            line-break: strict;
+            margin-bottom: 22px;
+        }
+
+        .rule {
+            width: 34px;
+            height: 1px;
+            background-color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .chapter p {
+            font-size: 15px;
+            line-height: 2.15;
+            letter-spacing: 0.04em;
+        }
+
+        .chapter p + p { margin-top: 1.6em; }
+
+        .chapter a {
+            color: var(--green-deep);
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+        }
+
+        .chapter a:hover,
+        .chapter a:focus-visible { color: var(--accent); }
+
+        .tone-dark {
+            background-color: var(--dark);
+            color: rgba(232,237,231,0.8);
+        }
+
+        .tone-dark .chapter-title { color: var(--green-light); }
+        .tone-dark p { color: rgba(232,237,231,0.78); }
+
+        .tone-green { background-color: var(--green-light); }
+
+        /* ---------- full bleed photo ---------- */
+        .band {
+            height: clamp(240px, 46vw, 460px);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .band-caption {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            padding: 60px 24px 20px;
+            background: linear-gradient(to top, rgba(44,54,42,0.75), transparent);
+            color: rgba(232,237,231,0.85);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-align: center;
+        }
+
+        /* ---------- portrait row ---------- */
+        .portrait-row {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+        }
+
+        .portrait-row img {
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 2px solid rgba(200,169,110,0.55);
+            flex-shrink: 0;
+        }
+
+        .portrait-name {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .portrait-role {
+            font-size: 12px;
+            line-height: 1.9;
+            color: var(--text-sub);
+            letter-spacing: 0.08em;
+        }
+
+        /* ---------- stats ---------- */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 14px;
+            margin: 34px 0 18px;
+        }
+
+        .stat {
+            border: 1px solid rgba(232,237,231,0.16);
+            border-radius: 10px;
+            padding: 20px 18px;
+            background: rgba(232,237,231,0.05);
+        }
+
+        .stat-num {
+            font-family: var(--sans-ja);
+            font-variant-numeric: tabular-nums;
+            font-size: 27px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .stat-num small {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            line-height: 1.8;
+            color: rgba(232,237,231,0.6);
+            letter-spacing: 0.06em;
+        }
+
+        .source {
+            font-size: 11px;
+            line-height: 1.9;
+            color: rgba(232,237,231,0.45);
+            letter-spacing: 0.05em;
+        }
+
+        .tone-dark .source a { color: rgba(200,169,110,0.75); }
+
+        /* ---------- cycle diagram ---------- */
+        .cycle-wrap {
+            display: flex;
+            justify-content: center;
+            margin: 8px 0 30px;
+        }
+
+        .cycle-wrap svg { width: min(340px, 100%); height: auto; }
+
+        .cycle-node-bg { fill: var(--beige); stroke: var(--accent); stroke-width: 1; }
+        .cycle-ring { fill: none; stroke: rgba(200,169,110,0.45); stroke-width: 1; }
+        .cycle-arrow { fill: var(--accent); }
+        .cycle-node-text {
+            font-family: var(--serif-ja);
+            font-size: 16px;
+            font-weight: 600;
+            fill: var(--dark);
+            letter-spacing: 0.05em;
+        }
+        .cycle-node-sub {
+            font-family: var(--serif-en);
+            font-size: 9px;
+            fill: var(--text-sub);
+            letter-spacing: 0.16em;
+        }
+        .cycle-center {
+            font-family: var(--serif-ja);
+            font-size: 13px;
+            fill: var(--text-sub);
+            letter-spacing: 0.22em;
+        }
+
+        /* ---------- pull quote ---------- */
+        .quote-section {
+            background-color: var(--dark);
+            padding: 84px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .quote-vertical {
+            writing-mode: vertical-rl;
+            font-size: clamp(17px, 2.6vw, 21px);
+            line-height: 2.4;
+            letter-spacing: 0.22em;
+            color: var(--green-light);
+            font-weight: 500;
+            max-height: 62vh;
+            border-right: 1px solid rgba(200,169,110,0.4);
+            padding-right: 28px;
+        }
+
+        .quote-vertical cite {
+            display: block;
+            font-family: var(--serif-en);
+            font-style: normal;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            color: rgba(200,169,110,0.8);
+            margin-right: 26px;
+        }
+
+        /* ---------- season list ---------- */
+        .season-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .season {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 20px;
+            align-items: baseline;
+            padding: 22px 4px;
+            border-top: 1px solid rgba(74,103,65,0.16);
+        }
+
+        .season:last-child { border-bottom: 1px solid rgba(74,103,65,0.16); }
+
+        .season-when {
+            font-family: var(--serif-en);
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            color: var(--accent);
+            text-transform: uppercase;
+            line-height: 1.9;
+        }
+
+        .season-when span {
+            display: block;
+            font-family: var(--serif-ja);
+            font-size: 12px;
+            color: var(--text-sub);
+            letter-spacing: 0.06em;
+        }
+
+        .season-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
+        }
+
+        .season-sub {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--text-sub);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .season-desc {
+            font-size: 13px;
+            line-height: 1.95;
+            color: var(--text-main);
+        }
+
+        /* ---------- doors ---------- */
+        .door-list { margin-top: 34px; display: grid; gap: 16px; }
+
+        .door {
+            background: #fff;
+            border: 1px solid rgba(74,103,65,0.12);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .door-tag {
+            font-family: var(--serif-en);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .door-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+
+        .door-desc {
+            font-size: 13px;
+            line-height: 1.95;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 9px 18px;
+            border: 1px solid var(--green-deep);
+            color: var(--green-deep);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.25s ease, color 0.25s ease;
+            margin-right: 8px;
+            margin-top: 6px;
+        }
+
+        .btn:hover,
+        .btn:focus-visible { background-color: var(--green-deep); color: #fff; }
+
+        /* ---------- connect ---------- */
+        .connect-list {
+            list-style: none;
+            margin-top: 32px;
+            display: grid;
+            gap: 2px;
+        }
+
+        .connect-list li {
+            display: grid;
+            grid-template-columns: 108px 1fr;
+            gap: 16px;
+            padding: 15px 4px;
+            border-bottom: 1px solid rgba(232,237,231,0.12);
+            font-size: 14px;
+            align-items: baseline;
+        }
+
+        .connect-key {
+            font-family: var(--serif-en);
+            font-size: 10px;
+            letter-spacing: 0.22em;
+            color: rgba(200,169,110,0.85);
+            text-transform: uppercase;
+        }
+
+        .connect-list a { color: var(--green-light); text-underline-offset: 4px; }
+        .connect-list a:hover, .connect-list a:focus-visible { color: var(--accent); }
+
+        /* ---------- footer ---------- */
+        .site-footer {
+            background-color: var(--dark);
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(232,237,231,0.1);
+        }
+
+        .footer-logo {
+            font-size: 13px;
+            color: rgba(232,237,231,0.5);
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            color: rgba(232,237,231,0.35);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible { color: rgba(232,237,231,0.7); }
+
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+        @media (max-width: 600px) {
+            .site-nav { display: none; }
+            .season { grid-template-columns: 1fr; gap: 6px; }
+            .connect-list li { grid-template-columns: 1fr; gap: 4px; }
+            .quote-vertical {
+                writing-mode: horizontal-tb;
+                border-right: none;
+                border-left: 1px solid rgba(200,169,110,0.4);
+                padding-right: 0;
+                padding-left: 20px;
+                max-height: none;
+            }
+            .quote-vertical cite { margin-right: 0; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-logo"><a href="index.html">Forest Works</a></div>
+        <nav class="site-nav">
+            <a href="index.html#experience">体験メニュー</a>
+            <a href="index.html#schedule">年間行事</a>
+            <a href="index.html#access">アクセス</a>
+            <a href="index.html">トップへ戻る</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="story-hero">
+        <div class="story-hero-inner">
+            <p class="story-hero-eyebrow">Our Story</p>
+            <h1 class="story-hero-title">竹林のはなし</h1>
+            <p class="story-hero-lead">
+                茨城県かすみがうら市の里山に、ひとつの竹林があります。<br>
+                観光地でも、公園でもありません。手を入れなければ、ただ暗くなっていくだけの竹林です。
+            </p>
+        </div>
+    </section>
+
+    <!-- はじめに -->
+    <section>
+        <div class="chapter">
+            <p class="chapter-eyebrow">Who</p>
+            <h2 class="chapter-title">竹を伐る人が、いなくなった。</h2>
+            <div class="rule"></div>
+
+            <div class="portrait-row">
+                <img src="profile.jpg" alt="かすみがうら竹林ベースを運営するたけすみこ">
+                <div>
+                    <p class="portrait-name">たけすみこ</p>
+                    <p class="portrait-role">Forest Works／かすみがうら竹林ベース<br>茨城県かすみがうら市</p>
+                </div>
+            </div>
+
+            <p>
+                わたしはこの竹林で、たけのこを掘り、竹を伐り、炭を焼いています。
+                そして、人が来て、座って、黙っていられる場所をつくっています。
+            </p>
+            <p>
+                竹林の手入れは地味な仕事です。伐っても伐っても、翌年にはまた生えてくる。
+                それでも続けているのは、竹が悪者だとは思っていないからです。
+                関わる人がいなくなっただけなのだと、竹林に通うほどに感じています。
+            </p>
+        </div>
+    </section>
+
+    <div class="band" style="background-image: url('sm-324.jpg'); background-position: center 40%;">
+        <p class="band-caption">竹を伐る ― かすみがうらの竹林にて</p>
+    </div>
+
+    <!-- 竹のこと -->
+    <section class="tone-dark">
+        <div class="chapter">
+            <p class="chapter-eyebrow">Context</p>
+            <h2 class="chapter-title">竹林は、いま静かに広がっている。</h2>
+            <div class="rule"></div>
+            <p>
+                プラスチックが竹の道具に取って代わり、竹材も筍も輸入に頼るようになりました。
+                使われなくなった竹林は、誰も伐らないまま残されています。
+            </p>
+
+            <div class="stat-grid">
+                <div class="stat">
+                    <p class="stat-num">16.7<small> 万ha</small></p>
+                    <p class="stat-label">全国の竹林面積<br>（2017年）</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-num">+5,300<small> ha</small></p>
+                    <p class="stat-label">直近5年間の<br>増加分</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-num">1〜3<small> m/年</small></p>
+                    <p class="stat-label">周囲の森へ<br>広がる速さ</p>
+                </div>
+            </div>
+
+            <p class="source">
+                出典：農林水産省／林野庁「<a href="https://www.rinya.maff.go.jp/j/kikaku/toukei/youran_mokuzi2023.html" target="_blank" rel="noopener">森林・林業統計要覧</a>」、
+                <a href="https://www.nippon.com/ja/in-depth/d00784/" target="_blank" rel="noopener">nippon.com「農林業にも影響を及ぼす放置竹林」</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- 循環 -->
+    <section>
+        <div class="chapter">
+            <p class="chapter-eyebrow">How</p>
+            <h2 class="chapter-title">終わりのない円を、まわし続ける。</h2>
+            <div class="rule"></div>
+            <p>
+                竹を伐る。炭に焼く。炭は土に還る。土からまた、たけのこが出る。
+                竹林の手入れは、始まりも終わりもない円です。
+            </p>
+
+            <div class="cycle-wrap">
+                <svg viewBox="0 0 360 360" role="img" aria-labelledby="cycle-title cycle-desc">
+                    <title id="cycle-title">竹林の循環図</title>
+                    <desc id="cycle-desc">伐る、焼く、還る、萌すの四つの工程が円を描いて繰り返されることを示す図。</desc>
+
+                    <circle class="cycle-ring" cx="180" cy="180" r="120"></circle>
+
+                    <path class="cycle-arrow" d="M -7 -6 L 7 0 L -7 6 Z" transform="translate(264.9,95.1) rotate(45)"></path>
+                    <path class="cycle-arrow" d="M -7 -6 L 7 0 L -7 6 Z" transform="translate(264.9,264.9) rotate(135)"></path>
+                    <path class="cycle-arrow" d="M -7 -6 L 7 0 L -7 6 Z" transform="translate(95.1,264.9) rotate(225)"></path>
+                    <path class="cycle-arrow" d="M -7 -6 L 7 0 L -7 6 Z" transform="translate(95.1,95.1) rotate(315)"></path>
+
+                    <text class="cycle-center" x="180" y="185" text-anchor="middle">竹の循環</text>
+
+                    <g>
+                        <circle class="cycle-node-bg" cx="180" cy="60" r="40"></circle>
+                        <text class="cycle-node-text" x="180" y="58" text-anchor="middle">伐る</text>
+                        <text class="cycle-node-sub" x="180" y="74" text-anchor="middle">CUT</text>
+                    </g>
+                    <g>
+                        <circle class="cycle-node-bg" cx="300" cy="180" r="40"></circle>
+                        <text class="cycle-node-text" x="300" y="178" text-anchor="middle">焼く</text>
+                        <text class="cycle-node-sub" x="300" y="194" text-anchor="middle">CHARCOAL</text>
+                    </g>
+                    <g>
+                        <circle class="cycle-node-bg" cx="180" cy="300" r="40"></circle>
+                        <text class="cycle-node-text" x="180" y="298" text-anchor="middle">還る</text>
+                        <text class="cycle-node-sub" x="180" y="314" text-anchor="middle">SOIL</text>
+                    </g>
+                    <g>
+                        <circle class="cycle-node-bg" cx="60" cy="180" r="40"></circle>
+                        <text class="cycle-node-text" x="60" y="178" text-anchor="middle">萌す</text>
+                        <text class="cycle-node-sub" x="60" y="194" text-anchor="middle">SHOOT</text>
+                    </g>
+                </svg>
+            </div>
+
+            <p>
+                だからこそ、一度きりのボランティアでは回りません。
+                毎年、同じ場所に人が戻ってくる仕組みがいる。
+                かすみがうら竹林ベースは、そのための場所です。
+            </p>
+        </div>
+    </section>
+
+    <!-- 引用 -->
+    <section class="quote-section">
+        <blockquote class="quote-vertical">
+            竹林は、ただの場所ではなく、<br>あなた自身と向き合うための空間です。
+            <cite>Kasumigaura Bamboo Base</cite>
+        </blockquote>
+    </section>
+
+    <!-- 一年 -->
+    <section class="tone-green">
+        <div class="chapter">
+            <p class="chapter-eyebrow">A Year</p>
+            <h2 class="chapter-title">ここの時間は、月のリズムで動いています。</h2>
+            <div class="rule"></div>
+            <p>四つの季節に、四つの集い。暦が一周すると、竹林も人も、少しだけ変わっています。</p>
+
+            <div class="season-list">
+                <div class="season">
+                    <p class="season-when">Spring<span>3月 — 5月</span></p>
+                    <div>
+                        <p class="season-name">たけのこ掘り</p>
+                        <p class="season-sub">― 春の筍起こし</p>
+                        <p class="season-desc">土の中から自分でたけのこを掘り起こす、春だけの特別な体験。</p>
+                    </div>
+                </div>
+                <div class="season">
+                    <p class="season-when">Summer<span>6月</span></p>
+                    <div>
+                        <p class="season-name">竹節水観察会</p>
+                        <p class="season-sub">― 竹の節句</p>
+                        <p class="season-desc">竹の節に溜まった水を観察する、梅雨ならではの静かな体験。</p>
+                    </div>
+                </div>
+                <div class="season">
+                    <p class="season-when">Autumn<span>11月 — 12月</span></p>
+                    <div>
+                        <p class="season-name">竹林 DAYCAMP</p>
+                        <p class="season-sub">― 竹始めの集い</p>
+                        <p class="season-desc">焚き火を囲み、竹炭づくりや瞑想ウォークを楽しむ一日。</p>
+                    </div>
+                </div>
+                <div class="season">
+                    <p class="season-when">Winter<span>1月 — 2月</span></p>
+                    <div>
+                        <p class="season-name">和しんぼく会</p>
+                        <p class="season-sub">― 旧暦年越しの集い</p>
+                        <p class="season-desc">新年の竹林で、静かに自分と向き合う交流会。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="band" style="background-image: url('たけのこ掘り.jpg'); background-position: center 45%;">
+        <p class="band-caption">春 ― 土の中から、自分の手で</p>
+    </div>
+
+    <!-- 子どもたち -->
+    <section>
+        <div class="chapter">
+            <p class="chapter-eyebrow">Hands</p>
+            <h2 class="chapter-title">竹は、いちばん身近な「使える自然」。</h2>
+            <div class="rule"></div>
+            <p>
+                竹を切って、やすりをかけて、名前を書く。
+                それだけで、子どもは自分の名札を一生ぶん覚えます。
+            </p>
+            <p>
+                放っておけば厄介者、手を入れれば道具になる。
+                その両方を、同じ日に、同じ場所で見せられる素材はそう多くありません。
+            </p>
+        </div>
+    </section>
+
+    <div class="band" style="background-image: url('experience.jpg'); background-position: center 30%;">
+        <p class="band-caption">竹の名札づくり ― 竹林 DAYCAMP にて</p>
+    </div>
+
+    <!-- 三つの入り口 -->
+    <section class="tone-green">
+        <div class="chapter">
+            <p class="chapter-eyebrow">Ways In</p>
+            <h2 class="chapter-title">三つの入り口があります。</h2>
+            <div class="rule"></div>
+
+            <div class="door-list">
+                <div class="door">
+                    <p class="door-tag">Spring · 春</p>
+                    <p class="door-title">たけのこ掘り</p>
+                    <p class="door-desc">土の中から自分で掘り起こす、シンプルで豊かな時間。春限定の体験です。</p>
+                    <a class="btn" href="https://takenokoworks.studio.site/" target="_blank" rel="noopener">詳細・予約 →</a>
+                </div>
+                <div class="door">
+                    <p class="door-tag">Year Round · 通年</p>
+                    <p class="door-title">季節の竹林体験</p>
+                    <p class="door-desc">竹炭づくり・瞑想ウォーク・焚き火など、季節ごとにさまざまな体験を開催しています。</p>
+                    <a class="btn" href="index.html#schedule">年間スケジュール →</a>
+                </div>
+                <div class="door">
+                    <p class="door-tag">Rental · レンタル</p>
+                    <p class="door-title">竹林レンタル</p>
+                    <p class="door-desc">竹林空間を丸ごとレンタル。撮影・イベント・ワークショップなどにお使いいただけます。</p>
+                    <a class="btn" href="https://lin.ee/vKltn4J3" target="_blank" rel="noopener">見学・相談はLINEから →</a>
+                    <a class="btn" href="https://www.forenta.net/area/kasumigaura-tikurin" target="_blank" rel="noopener">年間レンタルはフォレンタから →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="band" style="background-image: url('access.jpg'); background-position: center 55%;">
+        <p class="band-caption">瞑想ウォーク ― 里山の道を歩く</p>
+    </div>
+
+    <!-- これから -->
+    <section>
+        <div class="chapter">
+            <p class="chapter-eyebrow">Ahead</p>
+            <h2 class="chapter-title">「守る」場所ではなく、「使い続ける」場所へ。</h2>
+            <div class="rule"></div>
+            <p>
+                竹林は一人では回りません。
+                体験に来る人、レンタルで使う人、一緒に手を入れてくれる人。
+                関わる人が増えるほど、竹林は明るくなります。
+            </p>
+            <p>
+                竹を伐りに来たはずの人が、気づくと何も考えずに座っている。
+                それでいいと思っています。
+                ここは、あなた自身と向き合うための空間なのだから。
+            </p>
+        </div>
+    </section>
+
+    <!-- つながる -->
+    <section class="tone-dark">
+        <div class="chapter">
+            <p class="chapter-eyebrow">Connect</p>
+            <h2 class="chapter-title">竹林で、お会いしましょう。</h2>
+            <div class="rule"></div>
+
+            <ul class="connect-list">
+                <li><span class="connect-key">Instagram</span><a href="https://www.instagram.com/takesumikochan/" target="_blank" rel="noopener">@takesumikochan ― 最新のイベント情報</a></li>
+                <li><span class="connect-key">Instagram</span><a href="https://www.instagram.com/meisoukasumi/" target="_blank" rel="noopener">@meisoukasumi</a></li>
+                <li><span class="connect-key">YouTube</span><a href="https://www.youtube.com/@user-takenoko" target="_blank" rel="noopener">竹林の様子を動画で</a></li>
+                <li><span class="connect-key">note</span><a href="https://note.com/takesumiko" target="_blank" rel="noopener">竹林からの言葉</a></li>
+                <li><span class="connect-key">LINE</span><a href="https://lin.ee/vKltn4J3" target="_blank" rel="noopener">ご予約・お問い合わせ</a></li>
+                <li><span class="connect-key">Web</span><a href="https://wsmaruma.com" target="_blank" rel="noopener">Forest Works</a></li>
+                <li><span class="connect-key">Place</span>茨城県かすみがうら市</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p class="footer-logo">Forest Works / かすみがうら竹林ベース</p>
+        <div class="footer-links">
+            <a href="index.html">トップページ</a>
+            <a href="https://wsmaruma.com" target="_blank" rel="noopener">Forest Works HP</a>
+            <a href="https://www.instagram.com/takesumikochan/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.youtube.com/@user-takenoko" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://note.com/takesumiko" target="_blank" rel="noopener">Note</a>
+            <a href="https://lin.ee/vKltn4J3" target="_blank" rel="noopener">LINE</a>
+        </div>
+    </footer>
+
+</body>
+</html>
