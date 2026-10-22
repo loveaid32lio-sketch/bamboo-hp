@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ちくりんデイキャンプ｜かすみがうら竹林ベース　毎年11月開催</title>
+<meta name="description" content="竹火を囲んで、おいしいものを食べて、竹で何か作る。かすみがうら竹林ベースで毎年ひらくデイキャンプ。2026年は11月28日・29日、テーマはわりばしを作ろう会。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ちくりんデイキャンプ｜かすみがうら竹林ベース">
+<meta property="og:description" content="竹火を囲んで、おいしいものを食べて、竹で何か作る。2026年は11月28日・29日、参加費無料。">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c4622d">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Event","name":"ちくりんデイキャンプ",
+"startDate":"2026-11-28T10:00+09:00","endDate":"2026-11-29T15:00+09:00",
+"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+"eventStatus":"https://schema.org/EventScheduled",
+"location":{"@type":"Place","name":"かすみがうら竹林ベース",
+"address":{"@type":"PostalAddress","addressRegion":"茨城県","addressLocality":"かすみがうら市","addressCountry":"JP"}},
+"image":["img/hero.jpg"],
+"description":"竹火を囲んで、おいしいものを食べて、竹で何か作る。毎年ひらいているデイキャンプ。2026年のテーマはわりばしを作ろう会。",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY","availability":"https://schema.org/InStock"},
+"organizer":{"@type":"Organization","name":"かすみがうら竹林ベース"}}
+</script>
+<style>
+:root{
+  --ink:#2a2420; --sub:#6b6056; --line:#e8e2d8;
+  --paper:#fffdf9; --cream:#f8f2e8; --warm:#f3e7d6;
+  --fire:#c4622d; --leaf:#5f7f4a; --deep:#3c5a38;
+  --shadow:0 14px 38px rgba(42,36,32,.09);
+  --shadow-up:0 20px 50px rgba(42,36,32,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-size:19px;line-height:1.9;
+  font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Hiragino Mincho ProN",serif;font-weight:600;letter-spacing:.04em;line-height:1.5;margin:0}
+p{margin:0}
+.wrap{width:min(860px,100% - 40px);margin-inline:auto}
+.narrow{width:min(680px,100% - 40px);margin-inline:auto}
+section{padding:80px 0}
+@media (max-width:720px){ section{padding:52px 0} body{font-size:18px} }
+
+/* ヒーロー */
+#hero{position:relative;min-height:min(86vh,720px);display:grid;place-items:center;
+  text-align:center;overflow:hidden;padding:100px 0 80px}
+#hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#hero .veil{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(32,26,20,.34),rgba(32,26,20,.56) 60%,rgba(32,26,20,.72))}
+#hero .inner{position:relative;z-index:1;color:#fff}
+#hero .date{display:inline-block;background:var(--fire);color:#fff;font-size:17px;
+  border-radius:999px;padding:8px 24px;letter-spacing:.08em;margin-bottom:24px;
+  box-shadow:0 8px 22px rgba(196,98,45,.4)}
+#hero h1{font-size:clamp(32px,6.4vw,56px);text-shadow:0 2px 24px rgba(0,0,0,.4)}
+#hero .sub{margin:24px auto 0;max-width:520px;font-size:19px;color:rgba(255,255,255,.94);
+  text-shadow:0 1px 16px rgba(0,0,0,.45)}
+#hero .btns{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font:inherit;font-size:19px;font-weight:600;color:#fff;
+  background:var(--fire);border:none;border-radius:999px;padding:18px 40px;cursor:pointer;
+  text-decoration:none;min-height:56px;box-shadow:0 10px 26px rgba(196,98,45,.34);
+  transition:transform .25s ease-out,box-shadow .25s ease-out}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-up)}
+.btn.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.7);
+  box-shadow:none;backdrop-filter:blur(4px)}
+.btn.ghost:hover{background:rgba(255,255,255,.22)}
+
+/* 導入 */
+.lead{background:var(--cream)}
+.lead p + p{margin-top:22px}
+.lead .big{font-family:"Hiragino Mincho ProN",serif;font-size:clamp(21px,3.4vw,27px);line-height:1.8}
+
+/* 見出し */
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head .en{font-size:14px;letter-spacing:.28em;color:var(--leaf);margin-bottom:12px}
+.sec-head h2{font-size:clamp(24px,3.8vw,32px)}
+.sec-head p{margin-top:14px;color:var(--sub);font-size:17px}
+
+/* 3つの過ごし方 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media (max-width:760px){ .cards{grid-template-columns:1fr} }
+.card{background:var(--paper);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;
+  transition:transform .3s ease-out,box-shadow .3s ease-out}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-up)}
+.card .pic{height:168px;overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease-out}
+.card:hover .pic img{transform:scale(1.06)}
+.card .body{padding:26px 24px 28px}
+.card h3{font-size:21px;margin-bottom:12px}
+.card p{font-size:17px;color:var(--sub)}
+
+/* 当日の流れ */
+.flow{background:var(--cream)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 30px 64px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:42px;height:42px;
+  border-radius:50%;background:var(--fire);color:#fff;display:grid;place-items:center;
+  font-size:17px;font-family:"Hiragino Mincho ProN",serif}
+.steps li::after{content:"";position:absolute;left:21px;top:48px;bottom:6px;width:2px;background:var(--line)}
+.steps li:last-child{padding-bottom:0}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:19px;margin-bottom:6px}
+.steps .time{font-size:15px;color:var(--fire);letter-spacing:.06em;margin-bottom:4px}
+.steps p{font-size:17px;color:var(--sub)}
+
+/* 内覧会 */
+.note-box{background:var(--warm);border-radius:22px;padding:40px 36px}
+.note-box h3{font-size:22px;margin-bottom:14px}
+.note-box p + p{margin-top:14px}
+.note-box .tag{display:inline-block;background:var(--deep);color:#fff;font-size:15px;
+  border-radius:999px;padding:5px 18px;margin-bottom:16px}
+
+/* 持ち物 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media (max-width:720px){ .two{grid-template-columns:1fr} }
+.list{background:var(--paper);border-radius:18px;box-shadow:var(--shadow);padding:28px}
+.list h3{font-size:19px;margin-bottom:14px}
+.list ul{margin:0;padding-left:1.3em}
+.list li{margin-bottom:10px;color:var(--sub);font-size:17px}
+
+/* 概要 */
+.info{width:100%;border-collapse:collapse}
+.info th,.info td{text-align:left;padding:18px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.info th{width:7em;font-size:16px;color:var(--sub);font-weight:400;white-space:nowrap}
+.info td{font-size:18px}
+
+/* 申し込み */
+#apply{background:var(--deep);color:#fff;text-align:center}
+#apply h2{font-size:clamp(24px,3.8vw,32px)}
+#apply p{margin-top:18px;color:#cfdcc9;font-size:18px}
+#apply .btns{margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+#apply .btn.line{background:#06c755;box-shadow:0 10px 26px rgba(6,199,85,.32)}
+#apply .small{margin-top:26px;font-size:16px;color:#aebfa8}
+
+footer{padding:36px 0 64px;text-align:center;color:var(--sub);font-size:16px}
+.rise{opacity:0;transform:translateY(16px);transition:opacity .7s ease-out,transform .7s ease-out}
+.rise.in{opacity:1;transform:none}
+
+/* 画面の下にずっと出る申し込みバー */
+#dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
+  gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(255,253,249,.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(42,36,32,.08);
+  transform:translateY(110%);transition:transform .3s ease-out}
+#dock.show{transform:none}
+#dock a{flex:1;text-align:center;font-size:17px;padding:14px 10px;min-height:52px;
+  border-radius:999px;text-decoration:none;color:#fff;background:var(--fire);font-weight:600}
+#dock a.line{background:#06c755}
+@media (max-width:720px){ #dock{display:flex} body{padding-bottom:84px} }
+
+/* 印刷すると、A4 1枚のフライヤーになる */
+#flyer{display:none}
+@media print{
+  @page{size:A4;margin:9mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0;font-size:8.6pt;line-height:1.55}
+  body > section, body > footer, #dock{display:none !important}
+  #flyer{display:block;width:100%;color:var(--ink)}
+  #flyer h1,#flyer h2,#flyer h3{font-family:"Hiragino Mincho ProN",serif;margin:0}
+
+  .f-hero{position:relative;height:56mm;overflow:hidden;border-radius:2.4mm;margin-bottom:4mm}
+  .f-hero img{width:100%;height:100%;object-fit:cover}
+  .f-hero .v{position:absolute;inset:0;background:linear-gradient(180deg,rgba(32,26,20,.3),rgba(32,26,20,.74))}
+  .f-hero .t{position:absolute;left:7mm;right:7mm;bottom:5mm;color:#fff}
+  .f-hero .d{display:inline-block;background:var(--fire);color:#fff;font-size:8.4pt;
+    border-radius:99px;padding:1mm 4mm;letter-spacing:.06em;margin-bottom:2.4mm}
+  .f-hero h1{font-size:20pt;letter-spacing:.03em;line-height:1.35}
+  .f-hero .s{font-size:8.6pt;margin-top:1.8mm;color:rgba(255,255,255,.95)}
+
+  .f-lead{font-size:9pt;text-align:center;margin-bottom:4mm;color:var(--sub)}
+  .f-row{display:flex;gap:3mm;margin-bottom:4mm}
+  .f-col{flex:1;border:.5pt solid var(--line);border-radius:2mm;padding:3mm 3.4mm;background:var(--paper)}
+  .f-col h3{font-size:10pt;margin-bottom:1.4mm;color:var(--deep)}
+  .f-col p{font-size:8.2pt;color:var(--sub)}
+
+  .f-theme{background:var(--warm);border-radius:2mm;padding:3.6mm 5mm;margin-bottom:4mm;
+    display:flex;align-items:baseline;gap:4mm}
+  .f-theme .tg{background:var(--fire);color:#fff;font-size:7.4pt;border-radius:99px;
+    padding:.8mm 3mm;white-space:nowrap;letter-spacing:.06em}
+  .f-theme h2{font-size:13pt;white-space:nowrap}
+  .f-theme p{font-size:8.2pt;color:var(--sub)}
+
+  .f-flow{display:flex;gap:2mm;margin-bottom:4mm}
+  .f-flow li{flex:1;list-style:none;border-top:1.2pt solid var(--fire);padding-top:2mm}
+  .f-flow .tm{font-size:9.4pt;color:var(--fire);letter-spacing:.04em;margin-bottom:.8mm}
+  .f-flow h3{font-size:8.8pt;margin-bottom:.8mm}
+  .f-flow p{font-size:7.4pt;color:var(--sub);line-height:1.45}
+
+  .f-notes{display:flex;gap:3mm;margin-bottom:4mm}
+  .f-notes > div{flex:1;background:var(--cream);border-radius:2mm;padding:3mm 4mm}
+  .f-notes h3{font-size:9pt;margin-bottom:1.4mm}
+  .f-notes ul{margin:0;padding-left:4.4mm}
+  .f-notes li{font-size:7.8pt;color:var(--sub);line-height:1.5}
+
+  .f-info{display:flex;gap:3mm;align-items:stretch}
+  .f-info .box{flex:1;border:.5pt solid var(--line);border-radius:2mm;padding:3mm 4mm}
+  .f-info table{width:100%;border-collapse:collapse}
+  .f-info th{text-align:left;width:17mm;font-weight:400;color:var(--leaf);font-size:7.8pt;
+    padding:.7mm 0;vertical-align:top;white-space:nowrap}
+  .f-info td{font-size:7.8pt;padding:.7mm 0;color:var(--ink)}
+  .f-apply{width:62mm;background:var(--deep);color:#fff;border-radius:2mm;padding:3mm 4mm;text-align:center}
+  .f-apply h3{font-size:9.4pt;color:#fff;margin-bottom:2mm}
+  .f-qr{display:flex;gap:4mm;justify-content:center}
+  .f-qr figure{margin:0}
+  .f-qr svg{width:19mm;height:19mm;background:#fff;padding:1mm;border-radius:1.2mm;display:block}
+  .f-qr figcaption{font-size:7pt;margin-top:1.2mm;color:rgba(255,255,255,.92)}
+  .f-sign{margin-top:3mm;text-align:center;font-size:7.4pt;color:var(--sub);letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){ .rise{opacity:1;transform:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<section id="hero">
+  <img src="img/hero.jpg" alt="竹林の中で火を囲むデイキャンプの様子（イラスト風に加工）" fetchpriority="high">
+  <div class="veil"></div>
+  <div class="narrow inner">
+    <span class="date">2026年11月28日（土）・29日（日）　参加費無料</span>
+    <h1>竹火を囲んで、<br>まったり過ごす2日間。</h1>
+    <p class="sub">かすみがうら竹林ベースで、毎年ひらいているデイキャンプです。<br>
+      火を囲んで、おいしいものを食べて、竹で何か作る。それだけの日です。<br>参加費は無料、飲食の持ち込みも自由です。</p>
+    <div class="btns">
+      <a class="btn" href="#apply">申し込む</a>
+      <a class="btn ghost" href="#flow">当日の流れを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="lead">
+  <div class="narrow rise">
+    <p class="big">11月になると、山の木は葉を落として、林の中が明るくなっていきます。</p>
+    <p>竹は、この時期がいちばん葉が青いんです。春にたけのこを育てるために親竹が葉を手放すので、青くなるのは秋のほう。俳句でも、秋の季語を「竹の春」と呼ぶそうです。</p>
+    <p>竹を伐るのは、寒くなってから。水分が減って虫がつきにくくなるので、10月ではまだ早い。11月に入って、ようやく竹のシーズンが始まります。</p>
+    <p>それで、この2日間をひらくことにしました。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head rise">
+      <p class="en">EVERY YEAR</p>
+      <h2>毎年、やっていること</h2>
+      <p>この3つは、どの年も変わりません。</p>
+    </div>
+    <div class="cards">
+      <div class="card rise">
+        <div class="pic"><img src="img/fire.jpg" alt="竹火を囲んで座っている様子（イラスト風に加工）" loading="lazy"></div>
+        <div class="body">
+          <h3>竹火を囲む</h3>
+          <p>竹を燃やして、火を囲みます。竹の火はよく爆ぜて、よく暖まります。しゃべっても、黙っていても大丈夫です。</p>
+        </div>
+      </div>
+      <div class="card rise">
+        <div class="pic"><img src="img/eat.jpg" alt="無煙炭火器で魚やお餅を焼いているところ" loading="lazy"></div>
+        <div class="body">
+          <h3>おいしいものを食べる</h3>
+          <p>飲食の持ち込みは自由です。好きなものを持ってきて、火のそばでゆっくり食べてください。ゴミはお持ち帰りをお願いしています。</p>
+        </div>
+      </div>
+      <div class="card rise">
+        <div class="pic"><img src="img/make.jpg" alt="作った竹のキーホルダーを持つ子どもたち" loading="lazy"></div>
+        <div class="body">
+          <h3>竹で何か作る</h3>
+          <p>その年ごとにテーマを決めて、竹で何かひとつ作ります。道具はこちらで用意します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="note-box rise" style="background:var(--warm)">
+      <span class="tag" style="background:var(--fire)">今年のテーマ</span>
+      <h3>わりばしを作ろう会</h3>
+      <p>2026年は、わりばしです。竹を割って、削って、自分の1膳を作ります。</p>
+      <p>作ったわりばしは、その場のお昼で使ってもよし、持ち帰ってもよし。作らずに、火のそばで見ているだけでも大丈夫です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="narrow">
+    <div class="sec-head rise">
+      <p class="en">TIMETABLE</p>
+      <h2>当日の流れ</h2>
+      <p>時間はめやすです。途中からの参加も、早帰りも大丈夫です。</p>
+    </div>
+    <ol class="steps rise">
+      <li>
+        <p class="time">10:00</p>
+        <h3>集合・安全のご案内</h3>
+        <p>現地で20分ほど、歩く範囲と気をつける所をお伝えします。長そで・長ズボン・運動靴でお越しください。</p>
+      </li>
+      <li>
+        <p class="time">10:30</p>
+        <h3>火をおこす</h3>
+        <p>枯れ竹を集めて、火をつけます。竹は燃えるとよく爆ぜるので、最初は少し驚きます。</p>
+      </li>
+      <li>
+        <p class="time">12:00</p>
+        <h3>お昼（飲食の持ち込み自由）</h3>
+        <p>好きなものを持ってきてください。お弁当でも、鍋でも、お菓子でも。火のそばで温めてもかまいません。</p>
+      </li>
+      <li>
+        <p class="time">13:00</p>
+        <h3>竹で何か作る（今年はわりばし）</h3>
+        <p>竹を割るところから始めます。道具はこちらで用意します。作らずに見ているだけでも大丈夫です。</p>
+      </li>
+      <li>
+        <p class="time">15:00</p>
+        <h3>解散</h3>
+        <p>片づけは一緒にやりますが、先に帰っていただいても問題ありません。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="note-box rise">
+      <span class="tag">同日開催</span>
+      <h3>フォレンタの区画、内覧会</h3>
+      <p>同じ2日間で、竹林の区画をご案内します。自分の区画を持ってみたい方は、実際に歩いて、日の入り方や地面の様子を見てから決めていただけます。</p>
+      <p>その場で決める必要はありません。見るだけでも歓迎です。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head rise">
+      <p class="en">CHECK</p>
+      <h2>服装のことだけ、ひとつ</h2>
+      <p>あとは、無くてもなんとかなります。</p>
+    </div>
+    <div class="two">
+      <div class="list rise">
+        <h3>これだけお願いします</h3>
+        <ul>
+          <li>長そで・長ズボン・運動靴。竹の切り口は鋭いので、肌は出さないでください</li>
+          <li>汚れてもいい服。煙のにおいは、しばらく取れません</li>
+          <li>ゴミの持ち帰り。ゴミ箱はありません</li>
+        </ul>
+      </div>
+      <div class="list rise">
+        <h3>持ってこなくて大丈夫</h3>
+        <ul>
+          <li>道具一式。のこぎりも軍手も、こちらにあります</li>
+          <li>焚き火の道具、薪。竹はいくらでもあります</li>
+          <li>椅子やテーブル。無ければ切り株に座ります</li>
+          <li>経験や知識。初めての方がほとんどです</li>
+        </ul>
+        <p style="margin-top:14px;font-size:16px;color:var(--sub)">不便なところもありますが、それごと楽しんでいただけたらと思っています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lead">
+  <div class="narrow">
+    <div class="sec-head rise">
+      <p class="en">INFORMATION</p>
+      <h2>開催の概要</h2>
+    </div>
+    <table class="info rise">
+      <tr><th>日時</th><td>2026年11月28日（土）・29日（日）<br>10:00〜15:00（出入り自由）</td></tr>
+      <tr><th>場所</th><td>かすみがうら竹林ベース（茨城県かすみがうら市）<br>くわしい場所は、お申し込みの方にお送りします</td></tr>
+      <tr><th>内容</th><td>竹火を囲む、お昼、竹で何か作る（2026年はわりばし）<br>同日：フォレンタ区画の内覧会</td></tr>
+      <tr><th>参加費</th><td>無料です</td></tr>
+      <tr><th>持ち込み</th><td>飲食の持ち込みは自由です。ゴミはお持ち帰りください</td></tr>
+      <tr><th>雨天</th><td>小雨決行です。タープの下で火を囲みます。大雨のときは前日までにご連絡します</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="narrow">
+    <h2>お申し込み</h2>
+    <p>InstagramのDM、または公式LINEからご連絡ください。<br>
+      「11月28日に行きたい」のひとことで大丈夫です。</p>
+    <div class="btns">
+      <a class="btn" href="https://www.instagram.com/takesumikochan/" target="_blank" rel="noopener noreferrer">InstagramのDMで申し込む</a>
+      <a class="btn line" href="https://lin.ee/vKltn4J3" target="_blank" rel="noopener noreferrer">公式LINEで申し込む</a>
+    </div>
+    <p class="small">なんか気になるな、という方は、スタンプだけでも嬉しいです。</p>
+  </div>
+</section>
+
+
+<div id="flyer">
+  <div class="f-hero">
+    <img src="img/hero.jpg" alt="">
+    <div class="v"></div>
+    <div class="t">
+      <span class="d">2026年11月28日（土）・29日（日）　10:00〜15:00　参加費無料</span>
+      <h1>竹火を囲んで、まったり過ごす2日間。</h1>
+      <p class="s">かすみがうら竹林ベース　ちくりんデイキャンプ</p>
+    </div>
+  </div>
+
+  <p class="f-lead">竹を伐るのは、寒くなってから。11月に入って、ようやく竹のシーズンが始まります。</p>
+
+  <div class="f-row">
+    <div class="f-col"><h3>竹火を囲む</h3><p>竹を燃やして、火を囲みます。よく爆ぜて、よく暖まります。しゃべっても、黙っていても大丈夫です。</p></div>
+    <div class="f-col"><h3>おいしいものを食べる</h3><p>飲食の持ち込みは自由です。好きなものを持ってきて、火のそばでゆっくり食べてください。</p></div>
+    <div class="f-col"><h3>竹で何か作る</h3><p>その年ごとにテーマを決めて、竹で何かひとつ作ります。道具はこちらで用意します。</p></div>
+  </div>
+
+  <div class="f-theme">
+    <span class="tg">今年のテーマ</span>
+    <h2>わりばしを作ろう会</h2>
+    <p>竹を割って、削って、自分の1膳を作ります。作らずに、火のそばで見ているだけでも大丈夫です。</p>
+  </div>
+
+  <ul class="f-flow">
+    <li><p class="tm">10:00</p><h3>集合・安全のご案内</h3><p>歩く範囲と気をつける所を20分ほど</p></li>
+    <li><p class="tm">10:30</p><h3>火をおこす</h3><p>枯れ竹を集めて、火をつけます</p></li>
+    <li><p class="tm">12:00</p><h3>お昼</h3><p>持ち込み自由。火のそばで温めても</p></li>
+    <li><p class="tm">13:00</p><h3>わりばし作り</h3><p>竹を割るところから。道具はこちらに</p></li>
+    <li><p class="tm">15:00</p><h3>解散</h3><p>先に帰っていただいても大丈夫です</p></li>
+  </ul>
+
+  <div class="f-notes">
+    <div>
+      <h3>これだけお願いします</h3>
+      <ul>
+        <li>長そで・長ズボン・運動靴（竹の切り口は鋭いので、肌は出さないでください）</li>
+        <li>汚れてもいい服。煙のにおいは、しばらく取れません</li>
+        <li>ゴミの持ち帰り。ゴミ箱はありません</li>
+      </ul>
+    </div>
+    <div>
+      <h3>持ってこなくて大丈夫</h3>
+      <ul>
+        <li>道具一式。のこぎりも軍手も、こちらにあります</li>
+        <li>焚き火の道具、薪。竹はいくらでもあります</li>
+        <li>椅子やテーブル。無ければ切り株に座ります</li>
+        <li>経験や知識。初めての方がほとんどです</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-info">
+    <div class="box">
+      <table>
+        <tr><th>場所</th><td>かすみがうら竹林ベース（茨城県かすみがうら市）　くわしい場所はお申し込みの方へ</td></tr>
+        <tr><th>参加費</th><td>無料です</td></tr>
+        <tr><th>持ち込み</th><td>飲食の持ち込みは自由です。ゴミはお持ち帰りください</td></tr>
+        <tr><th>雨天</th><td>小雨決行。タープの下で火を囲みます。大雨のときは前日までにご連絡します</td></tr>
+        <tr><th>同日開催</th><td>フォレンタの区画、内覧会。見るだけでも歓迎です</td></tr>
+      </table>
+      <p class="f-sign">不便なところもありますが、それごと楽しんでいただけたら。</p>
+    </div>
+    <div class="f-apply">
+      <h3>お申し込み</h3>
+      <div class="f-qr">
+        <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33"><path stroke="#000" d="M2 2.5h7m1 0h2m1 0h2m1 0h1m2 0h2m3 0h7m-29 1h1m5 0h1m2 0h1m4 0h1m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m1 0h2m1 0h4m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h1m2 0h1m3 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h1m4 0h3m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h1m2 0h2m2 0h1m1 0h1m-21 1h1m1 0h1m3 0h2m2 0h3m1 0h2m4 0h1m2 0h1m2 0h1m1 0h1m-29 1h3m1 0h1m3 0h1m1 0h1m1 0h2m1 0h3m1 0h2m1 0h2m3 0h2m-28 1h1m2 0h3m1 0h1m6 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m2 0h3m1 0h1m1 0h3m2 0h1m3 0h1m2 0h1m1 0h3m-25 1h4m1 0h1m1 0h2m1 0h6m1 0h3m1 0h2m4 0h1m-29 1h1m1 0h1m2 0h1m1 0h3m1 0h1m3 0h3m1 0h2m1 0h1m4 0h2m-24 1h2m1 0h1m1 0h1m1 0h4m3 0h2m7 0h1m-28 1h1m1 0h3m4 0h3m2 0h1m2 0h2m2 0h2m-24 1h3m2 0h2m6 0h2m1 0h1m2 0h1m2 0h1m5 0h1m-27 1h2m1 0h1m3 0h1m3 0h1m1 0h3m1 0h5m2 0h3m-29 1h4m2 0h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1m-26 1h1m1 0h1m3 0h3m1 0h1m2 0h1m1 0h6m-24 1h2m1 0h2m1 0h1m2 0h1m2 0h2m1 0h1m3 0h7m1 0h1m-20 1h1m2 0h2m2 0h2m3 0h1m3 0h3m1 0h1m-29 1h7m1 0h1m1 0h1m2 0h3m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m3 0h1m1 0h1m1 0h3m1 0h3m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h2m1 0h1m2 0h7m2 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h4m1 0h1m1 0h1m1 0h4m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h4m3 0h1m2 0h2m-29 1h1m5 0h1m6 0h3m2 0h1m1 0h2m1 0h3m-26 1h7m1 0h1m2 0h2m2 0h1m4 0h3m1 0h1m3 0h1"/></svg><figcaption>Instagram のDM</figcaption></figure>
+        <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path stroke="#000" d="M2 2.5h7m1 0h2m2 0h1m1 0h2m2 0h7m-25 1h1m5 0h1m1 0h1m3 0h2m2 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h4m1 0h3m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h3m3 0h3m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m4 0h1m1 0h1m4 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-12 1h1m-14 1h1m2 0h6m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m-25 1h1m1 0h2m1 0h1m3 0h2m1 0h1m2 0h1m3 0h5m-24 1h1m2 0h2m1 0h2m1 0h3m1 0h1m1 0h3m2 0h2m2 0h1m-25 1h3m4 0h1m1 0h3m2 0h2m2 0h7m-25 1h1m2 0h2m1 0h4m2 0h1m3 0h1m1 0h2m4 0h1m-25 1h2m2 0h1m2 0h4m4 0h1m4 0h1m2 0h1m-24 1h2m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m1 0h1m2 0h5m-25 1h1m1 0h2m1 0h1m2 0h1m2 0h1m7 0h1m1 0h2m1 0h1m-25 1h1m1 0h1m2 0h3m1 0h2m2 0h1m1 0h6m1 0h2m-16 1h2m1 0h2m3 0h1m3 0h1m1 0h2m-24 1h7m1 0h4m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m1 0h3m1 0h2m1 0h2m3 0h1m-21 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h6m2 0h2m-25 1h1m1 0h3m1 0h1m1 0h3m3 0h3m1 0h1m4 0h2m-25 1h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m2 0h5m-25 1h1m5 0h1m2 0h1m9 0h2m1 0h3m-25 1h7m1 0h2m2 0h3m1 0h2m3 0h1m2 0h1"/></svg><figcaption>公式LINE</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="dock">
+  <a href="https://www.instagram.com/takesumikochan/" target="_blank" rel="noopener noreferrer">InstagramのDM</a>
+  <a class="line" href="https://lin.ee/vKltn4J3" target="_blank" rel="noopener noreferrer">公式LINE</a>
+</div>
+
+<footer>
+  <div class="narrow">
+    <p><a href="/" style="color:var(--deep);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px">← かすみがうら竹林ベース トップへ</a></p>
+    <p style="margin-top:20px">かすみがうら竹林ベース ／ Forest Works ｜ ウィズマルマ</p>
+  </div>
+</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{rootMargin:"0px 0px -8% 0px"});
+Array.prototype.forEach.call(document.querySelectorAll(".rise"),function(el){ io.observe(el); });
+
+/* ヒーローを過ぎたら申し込みバーを出す。申し込み欄に来たら引っ込める */
+var dock=document.getElementById("dock");
+var io2=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.target.id==="hero") dock.classList.toggle("show", !e.isIntersecting);
+    if(e.target.id==="apply" && e.isIntersecting) dock.classList.remove("show");
+  });
+},{threshold:.08});
+io2.observe(document.getElementById("hero"));
+io2.observe(document.getElementById("apply"));
+</script>
+</body>
+</html>
