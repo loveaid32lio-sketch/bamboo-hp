@@ -96,7 +96,6 @@ Kasumigaura Bamboo Base — Forest Works
 
 ## 09 / つながる
 - Instagram｜@takesumikochan（最新のイベント情報）
-- Instagram｜@meisoukasumi
 - YouTube｜@user-takenoko
 - note｜note.com/takesumiko（竹林からの言葉）
 - LINE公式｜ご予約・お問い合わせ
